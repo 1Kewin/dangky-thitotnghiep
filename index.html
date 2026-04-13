@@ -4,133 +4,125 @@
 <meta charset="UTF-8">
 <title>Phiếu Lấy Thông Tin</title>
 
+<!-- QUAN TRỌNG: giúp co giãn -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #dff6f6, #ffffff);
-    }
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
 
-    h1 {
-        text-align: center;
-        margin-top: 30px;
-        color: #333;
-    }
+  body {
+    margin: 0;
+    padding: 10px;
+    background: linear-gradient(135deg, #dff6f6, #ffffff);
+  }
 
-    .author {
-        text-align: center;
-        font-weight: bold;
-        color: #4cc7c7;
-        margin-bottom: 10px;
-    }
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+  }
 
-    fieldset {
-        width: 520px;
-        margin: 20px auto;
-        border: 4px solid #4cc7c7;
-        border-radius: 15px;
-        padding: 25px;
-        background: white;
-        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-    }
+  fieldset {
+    max-width: 600px; /* FIX TRÀN */
+    margin: 20px auto;
+    border: 3px solid #4cc7c7;
+    border-radius: 12px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
 
-    legend {
-        font-size: 20px;
-        font-weight: bold;
-        color: #ff4d4d;
-        padding: 5px 15px;
-        background: white;
-        border-radius: 10px;
-    }
+  legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4d4d;
+  }
 
-    table {
-        width: 100%;
-    }
+  table {
+    width: 100%;
+  }
 
-    th {
-        text-align: left;
-        padding-bottom: 10px;
-        color: #555;
-        vertical-align: top;
-    }
+  th {
+    text-align: left;
+    padding-bottom: 8px;
+    width: 35%;
+    font-size: 14px;
+  }
 
-    td {
-        padding-bottom: 12px;
-    }
+  td {
+    padding-bottom: 10px;
+  }
 
-    input, select {
-        width: 100%;
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-    }
+  input, select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
 
-    input[type="radio"], input[type="checkbox"] {
-        width: auto;
-        margin-right: 5px;
-    }
+  input[type="radio"], input[type="checkbox"] {
+    width: auto;
+  }
 
-    .inline {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+  .inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    .hidden {
-        display: none;
-    }
+  .hidden {
+    display: none;
+  }
 
-    button {
-        background: #4cc7c7;
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
+  button {
+    width: 100%;
+    background: #4cc7c7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
-    button:hover {
-        background: #38a9a9;
-    }
+  button:hover {
+    background: #38a9a9;
+  }
 
-    .note {
-        font-size: 13px;
-        color: red;
-    }
-
-    .footer {
-        text-align: center;
-        margin-top: 15px;
-        font-style: italic;
-        color: #777;
-    }
+  .note {
+    font-size: 12px;
+    color: red;
+  }
 </style>
 
 <script>
 function showSubjects(type) {
-    document.getElementById("tn").classList.add("hidden");
-    document.getElementById("xh").classList.add("hidden");
+  document.getElementById("tn").classList.add("hidden");
+  document.getElementById("xh").classList.add("hidden");
 
-    document.querySelectorAll(".mon").forEach(cb => cb.checked = false);
+  document.querySelectorAll(".mon").forEach(cb => cb.checked = false);
 
-    if (type === "tn") {
-        document.getElementById("tn").classList.remove("hidden");
-    } else {
-        document.getElementById("xh").classList.remove("hidden");
-    }
+  if (type === "tn") {
+    document.getElementById("tn").classList.remove("hidden");
+  } else {
+    document.getElementById("xh").classList.remove("hidden");
+  }
 }
 
 function limitCheckbox() {
-    let checked = document.querySelectorAll('.mon:checked');
-    if (checked.length > 2) {
-        alert("Chỉ được chọn tối đa 2 môn!");
-        this.checked = false;
-    }
+  let checked = document.querySelectorAll('.mon:checked');
+  if (checked.length > 2) {
+    alert("Chỉ được chọn tối đa 2 môn!");
+    this.checked = false;
+  }
 }
 
 window.onload = function() {
-    document.querySelectorAll('.mon').forEach(cb => {
-        cb.addEventListener('change', limitCheckbox);
-    });
+  document.querySelectorAll('.mon').forEach(cb => {
+    cb.addEventListener('change', limitCheckbox);
+  });
 }
 </script>
 
@@ -138,84 +130,91 @@ window.onload = function() {
 
 <body>
 
-<h1>Đăng ký môn thi tốt nghiệp – Lớp 12A7</h1>
+<h1>Đăng ký môn thi tốt nghiệp – Lớp 12</h1>
+
 <fieldset>
-    <legend>Nhập thông tin</legend>
+<legend>Nhập thông tin</legend>
 
-    <form>
-        <table>
-            <tr>
-                <th>Họ và tên:</th>
-                <td><input type="text" value="Đặng Nữ Ái Mỹ"></td>
-            </tr>
+<form>
+<table>
 
-            <tr>
-                <th>Lớp:</th>
-                <td>
-                    <select>
-                        <option>12A7</option>
-                        <option>12A6</option>
-                        <option>12A5</option>
-                        <option>12A4</option>
-                        <option>12A3</option>
-                        <option>12A2</option>
-                        <option>12A1</option>
-                    </select>
-                </td>
-            </tr>
+<tr>
+<th>Họ và tên:</th>
+<td><input type="text" value="Đặng Nữ Ái Mỹ"></td>
+</tr>
 
-            <tr>
-                <th>Ngày sinh:</th>
-                <td><input type="date" value="2008-01-12"></td>
-            </tr>
+<tr>
+<th>Lớp:</th>
+<td>
+<select>
+<option>12A1</option>
+<option>12A2</option>
+<option>12A3</option>
+<option>12A4</option>
+<option>12A5</option>
+<option>12A6</option>
+<option>12A7</option>
+</select>
+</td>
+</tr>
 
-            <tr>
-                <th>Tổ hợp:</th>
-                <td class="inline">
-                    <label><input type="radio" name="tohop" onclick="showSubjects('tn')"> Tự nhiên</label>
-                    <label><input type="radio" name="tohop" onclick="showSubjects('xh')"> Xã hội</label>
-                </td>
-            </tr>
+<tr>
+<th>Ngày sinh:</th>
+<td><input type="date" value="2008-01-12"></td>
+</tr>
 
-            <tr>
-                <th>Môn thi:</th>
-                <td>
-                    <b>Bắt buộc:</b> Toán, Văn <br><br>
+<tr>
+<th>Tổ hợp:</th>
+<td class="inline">
+<label><input type="radio" name="tohop" onclick="showSubjects('tn')"> Tự nhiên</label>
+<label><input type="radio" name="tohop" onclick="showSubjects('xh')"> Xã hội</label>
+</td>
+</tr>
 
-                    <div id="tn" class="hidden">
-                        <b>Chọn 2 môn:</b><br>
-                        <div class="inline">
-                            <label><input type="checkbox" class="mon"> Vật lí</label>
-                            <label><input type="checkbox" class="mon"> Hóa học</label>
-                            <label><input type="checkbox" class="mon"> Sinh học</label>
-                            <label><input type="checkbox" class="mon"> Lịch sử</label>
-                            <label><input type="checkbox" class="mon"> Tiếng Anh</label>
-                        </div>
-                    </div>
+<tr>
+<th>Môn thi:</th>
+<td>
 
-                    <div id="xh" class="hidden">
-                        <b>Chọn 2 môn:</b><br>
-                        <div class="inline">
-                            <label><input type="checkbox" class="mon"> Địa lí</label>
-                            <label><input type="checkbox" class="mon"> GD Kinh tế & PL</label>
-                            <label><input type="checkbox" class="mon"> Lịch sử</label>
-                            <label><input type="checkbox" class="mon"> Tiếng Anh</label>
-                            <label><input type="checkbox" class="mon"> Hóa học</label>
-                            <label><input type="checkbox" class="mon"> Tin học</label>
-                        </div>
-                    </div>
+<b>Bắt buộc:</b> Toán, Văn <br><br>
 
-                    <div class="note">* Chỉ được chọn tối đa 2 môn</div>
-                </td>
-            </tr>
+<div id="tn" class="hidden">
+<b>Chọn 2 môn:</b>
+<div class="inline">
+<label><input type="checkbox" class="mon"> Vật Lí</label>
+<label><input type="checkbox" class="mon"> Hóa Học</label>
+<label><input type="checkbox" class="mon"> Sinh Học</label>
+<label><input type="checkbox" class="mon"> Lịch Sử</label>
+<label><input type="checkbox" class="mon"> Tiếng Anh</label>
+</div>
+</div>
 
-            <tr>
-                <td colspan="2" style="text-align:center;">
-                    <button type="submit">Gửi thông tin</button>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div id="xh" class="hidden">
+<b>Chọn 2 môn:</b>
+<div class="inline">
+<label><input type="checkbox" class="mon"> Địa Lí</label>
+<label><input type="checkbox" class="mon"> GDKT & PL</label>
+<label><input type="checkbox" class="mon"> Lịch sử</label>
+<label><input type="checkbox" class="mon"> Tiếng Anh</label>
+<label><input type="checkbox" class="mon"> Hóa Học</label>
+<label><input type="checkbox" class="mon"> Tin Học</label>
+</div>
+</div>
+
+<div class="note">* Chỉ được chọn tối đa 2 môn</div>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button type="submit">Gửi thông tin</button>
+</td>
+</tr>
+
+</table>
+</form>
+
 </fieldset>
+
 </body>
 </html>
