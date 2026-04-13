@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Phiếu Lấy Thông Tin</title>
 
-<!-- QUAN TRỌNG: giúp co giãn -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -26,7 +25,7 @@
   }
 
   fieldset {
-    max-width: 600px; /* FIX TRÀN */
+    max-width: 600px;
     margin: 20px auto;
     border: 3px solid #4cc7c7;
     border-radius: 12px;
@@ -38,7 +37,8 @@
   legend {
     font-size: 18px;
     font-weight: bold;
-    color: #ff4d4d;
+    color: red;
+    text-align: center;
   }
 
   table {
@@ -133,15 +133,15 @@ window.onload = function() {
 <h1>Đăng ký môn thi tốt nghiệp – Lớp 12</h1>
 
 <fieldset>
-<legend>Nhập thông tin</legend>
+
+<legend>
+Nhập thông tin<br>
+1. Đặng Nữ Ái Mỹ<br>
+2. Phạm Khánh Ngân
+</legend>
 
 <form>
 <table>
-
-<tr>
-<th>Họ và tên:</th>
-<td><input type="text" value="Đặng Nữ Ái Mỹ"></td>
-</tr>
 
 <tr>
 <th>Lớp:</th>
@@ -156,11 +156,6 @@ window.onload = function() {
 <option>12A7</option>
 </select>
 </td>
-</tr>
-
-<tr>
-<th>Ngày sinh:</th>
-<td><input type="date" value="2008-01-12"></td>
 </tr>
 
 <tr>
@@ -180,10 +175,10 @@ window.onload = function() {
 <div id="tn" class="hidden">
 <b>Chọn 2 môn:</b>
 <div class="inline">
-<label><input type="checkbox" class="mon"> Vật Lí</label>
-<label><input type="checkbox" class="mon"> Hóa Học</label>
-<label><input type="checkbox" class="mon"> Sinh Học</label>
-<label><input type="checkbox" class="mon"> Lịch Sử</label>
+<label><input type="checkbox" class="mon"> Vật lí</label>
+<label><input type="checkbox" class="mon"> Hóa học</label>
+<label><input type="checkbox" class="mon"> Sinh học</label>
+<label><input type="checkbox" class="mon"> Lịch sử</label>
 <label><input type="checkbox" class="mon"> Tiếng Anh</label>
 </div>
 </div>
@@ -191,12 +186,12 @@ window.onload = function() {
 <div id="xh" class="hidden">
 <b>Chọn 2 môn:</b>
 <div class="inline">
-<label><input type="checkbox" class="mon"> Địa Lí</label>
-<label><input type="checkbox" class="mon"> GDKT & PL</label>
+<label><input type="checkbox" class="mon"> Địa lí</label>
+<label><input type="checkbox" class="mon"> GD Kinh tế & PL</label>
 <label><input type="checkbox" class="mon"> Lịch sử</label>
 <label><input type="checkbox" class="mon"> Tiếng Anh</label>
-<label><input type="checkbox" class="mon"> Hóa Học</label>
-<label><input type="checkbox" class="mon"> Tin Học</label>
+<label><input type="checkbox" class="mon"> Hóa học</label>
+<label><input type="checkbox" class="mon"> Tin học</label>
 </div>
 </div>
 
